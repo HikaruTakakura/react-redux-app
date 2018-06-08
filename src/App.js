@@ -2,17 +2,22 @@ import React, { Component } from 'react';
 
 class App extends Component {
   render() {
+    const greeting = "Hi, React!";
+    const dom = <h1 className="foo">{greeting}</h1>;
     return (
-      <h1 className="App">
-        Hello World!
-      </h1>
+      <React.Fragment>
+        <label htmlFor="bar">bar</label>
+        <input type="text" onChange={() => {console.log("I am changed.")}} />
+      </React.Fragment>
     );
   }
 }
 
+export default App;
+
 // jsx
 // トランスパイル jsx -> js
-// これでも動くが可読性が低い
+// これでも動くが、可読性が低い
 // class App extends Component {
 //   render() {
 //     return (
@@ -21,4 +26,7 @@ class App extends Component {
 //   }
 // }
 
-export default App;
+// returnで返すタグは一つでなければならない。>>全体をdivで包むとok。
+// 必要のないdivタグを出力しないといけない？
+// React.Fragmentタグで包めばOK！
+
