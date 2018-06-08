@@ -1,16 +1,34 @@
 import React, { Component } from 'react';
 
-class App extends Component {
-  render() {
-    const greeting = "Hi, React!";
-    const dom = <h1 className="foo">{greeting}</h1>;
-    return (
-      <React.Fragment>
-        <label htmlFor="bar">bar</label>
-        <input type="text" onChange={() => {console.log("I am changed.")}} />
-      </React.Fragment>
-    );
-  }
+// class App extends Component {
+//   render() {
+//     const greeting = "Hi, React!";
+//     const dom = <h1 className="foo">{greeting}</h1>;
+//     return (
+//       <React.Fragment>
+//         <label htmlFor="bar">{greeting}</label>
+//         <input type="text" onChange={() => {console.log("I am changed.")}} />
+//       </React.Fragment>
+//     );
+//   }
+// }
+
+const App = () => {
+  const cat = "Meow!!"
+  return(
+    <div>
+      {cat}
+      <Cat />
+      <Cat />
+      <Cat />
+    </div>
+  )
+}
+
+const Cat = () => {
+  return (
+    <div>Meow!</div>
+  )
 }
 
 export default App;
@@ -30,3 +48,7 @@ export default App;
 // 必要のないdivタグを出力しないといけない？
 // React.Fragmentタグで包めばOK！
 
+// トランスパイラーbabelがjsxをjsに
+// webpackが依存関係をまとめる
+
+// App:クラスコンポーネント
